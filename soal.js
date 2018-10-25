@@ -1,47 +1,37 @@
 class Cart {
-    constructor({name, jumlah}){
-        this.name = name,
-        this.jumlah = jumlah
-    }
-
+  constructor({ name, jumlah }) {
+    this.name = name
+    this.jumlah = jumlah
+  }
 }
 
 const showCart = []
 
-function addProduct(nama, jumlah){
-if(showCart.length === 0){
-    showCart.push({ nama : nama, jumlah : jumlah })
-}else{
-for(let i=0; i<showCart.length; i++){
-    if(showCart[i].nama === " " && showCart[i].jumlah === " "){
-        showCart.push({ nama : nama, jumlah : jumlah })
-    }else if (showCart[i].nama === nama ){
+function addProduct(nama, jumlah) {
+  if (showCart.length === 0) {
+    showCart.push({ nama: nama, jumlah: jumlah })
+  } else {
+    for (let i = 0; i < showCart.length; i++) {
+      if (showCart[i].nama === " " && showCart[i].jumlah === " ") {
+        showCart.push({ nama: nama, jumlah: jumlah })
+      } else if (showCart[i].nama === nama) {
         showCart[i].jumlah += jumlah
+      }
     }
-}
-}
-
+  }
 }
 
-
-function removeProduct(nama){
-    for(let i=0; i<showCart.length; i++){
-        if(showCart[i].nama === nama){
-            showCart.splice(i,1)
-        }
+function removeProduct(nama) {
+  for (let i = 0; i < showCart.length; i++) {
+    if (showCart[i].nama === nama) {
+      showCart.splice(i, 1)
     }
-    }
-addProduct('ikan',2)
-addProduct('bebek',2)
-
+  }
+}
+addProduct("ikan", 2)
+addProduct("bebek", 2)
 
 console.log(showCart)
-
-
-
-
-
-
 
 // const cart = new Cart();
 
