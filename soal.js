@@ -28,6 +28,7 @@ function removeProduct(nama) {
     }
   }
 }
+
 addProduct("ikan", 2)
 addProduct("bebek", 2)
 
